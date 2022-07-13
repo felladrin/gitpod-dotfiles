@@ -11,6 +11,12 @@ if [ -x "$(command -v brew)" ]; then
     lf
 fi
 
+if [ -x "$(command -v micro)" ]; then
+  micro -plugin install \
+    lsp \
+    fzf
+fi
+
 echo "Installing Ble.sh (https://github.com/akinomyoga/ble.sh)..." &&
   curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf - &&
   mv ble-nightly* blesh &&
