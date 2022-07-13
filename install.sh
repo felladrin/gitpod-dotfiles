@@ -1,18 +1,13 @@
 startTime=$(date +%s)
 
 if [ -x "$(command -v brew)" ]; then
-  brew tap \
-    helix-editor/helix
-
   brew install \
+    lazygit \
     zellij \
     micro \
-    helix \
-    gitui \
     procs \
-    tmux \
-    exa \
     bat \
+    fzf \
     lf
 fi
 
