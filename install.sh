@@ -3,6 +3,7 @@ startTime=$(date +%s)
 if [ -x "$(command -v brew)" ]; then
   brew install \
     lazygit \
+    ripgrep \
     zellij \
     micro \
     procs \
@@ -27,6 +28,7 @@ echo "Installing Ble.sh (https://github.com/akinomyoga/ble.sh)..." &&
 
 echo "Configuring bash..." &&
   echo 'HISTTIMEFORMAT="|%Y-%m-%d %T| "' >> ~/.bashrc &&
+  echo 'FZF_DEFAULT_COMMAND="rg --files"' >> ~/.bashrc &&
   echo "Done!"
 
 echo "Adding bash aliases..." &&
