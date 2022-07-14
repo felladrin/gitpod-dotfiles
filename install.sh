@@ -12,12 +12,6 @@ if [ -x "$(command -v brew)" ]; then
     fzf
 fi
 
-if [ -x "$(command -v vim)" ]; then
-  echo "Installing SpaceVim..." &&
-    curl -sLf https://spacevim.org/install.sh | bash &&
-    echo "Done!"
-fi
-
 if [ -x "$(command -v bash)" ]; then
   echo "Configuring bash..." &&
     echo 'HISTTIMEFORMAT="|%Y-%m-%d %T| "' >> ~/.bashrc &&
@@ -28,7 +22,8 @@ if [ -x "$(command -v bash)" ]; then
     {
       echo "alias ranger='. ranger'"
       echo "alias dust='dust -i'"
-      echo "alias cloudcmd='npx -y cloudcmd';"
+      echo "alias cloudcmd='npx -y cloudcmd'"
+      echo "alias install-spacevim='curl -sLf https://spacevim.org/install.sh | bash'"
     } >> ~/.bash_aliases &&
     echo "Done!"
 
