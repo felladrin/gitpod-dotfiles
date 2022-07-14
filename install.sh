@@ -33,11 +33,16 @@ if [ -x "$(command -v bash)" ]; then
 
   echo "Installing Ble.sh (https://github.com/akinomyoga/ble.sh)..." &&
     curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf - &&
+    rm -rf blesh &&
     mv ble-nightly* blesh &&
+    rm -rf ~/.local/share/blesh &&
     mkdir -p ~/.local/share &&
     mv blesh/ ~/.local/share &&
     echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc &&
     echo "Done!"
+
+  source ~/.bashrc
+  source ~/.bash_aliases
 fi
 
 endTime=$(date +%s)
