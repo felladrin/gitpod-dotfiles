@@ -1,3 +1,4 @@
+#!/bin/bash
 startTime=$(date +%s)
 
 if [ -x "$(command -v brew)" ]; then
@@ -39,7 +40,10 @@ if [ -x "$(command -v bash)" ]; then
     echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc &&
     echo "Done!"
 
+  # shellcheck source=/dev/null
   source ~/.bashrc
+
+  # shellcheck source=/dev/null
   source ~/.bash_aliases
 fi
 
