@@ -24,8 +24,11 @@ if [ -x "$(command -v bash)" ]; then
     echo "Done!"
 
   echo "Adding bash aliases..." &&
-    (ALIAS='lf -last-dir-path=$HOME/.lf-last-dir-path; LASTDIR=`cat $HOME/.lf-last-dir-path`; cd "$LASTDIR";'; echo "alias lf='$ALIAS';") >> ~/.bash_aliases &&
-    echo "alias cloudcmd='npx -y cloudcmd';" >> ~/.bash_aliases &&
+    (LF_ALIAS='lf -last-dir-path=$HOME/.lf-last-dir-path; LASTDIR=`cat $HOME/.lf-last-dir-path`; cd "$LASTDIR";';
+    {
+      echo "alias lf='$LF_ALIAS';"
+      echo "alias cloudcmd='npx -y cloudcmd';"
+    }) >> ~/.bash_aliases &&
     echo "Done!"
 
   echo "Installing Ble.sh (https://github.com/akinomyoga/ble.sh)..." &&
