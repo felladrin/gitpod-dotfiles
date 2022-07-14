@@ -7,7 +7,6 @@ if [ -x "$(command -v brew)" ]; then
     zellij \
     ranger \
     procs \
-    bat \
     fzf
 fi
 
