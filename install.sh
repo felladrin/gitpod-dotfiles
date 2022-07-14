@@ -5,10 +5,10 @@ if [ -x "$(command -v brew)" ]; then
     lazygit \
     ripgrep \
     zellij \
+    ranger \
     procs \
     bat \
-    fzf \
-    lf
+    fzf
 fi
 
 if [ -x "$(command -v vim)" ]; then
@@ -24,11 +24,10 @@ if [ -x "$(command -v bash)" ]; then
     echo "Done!"
 
   echo "Adding bash aliases..." &&
-    (LF_ALIAS='lf -last-dir-path=$HOME/.lf-last-dir-path; LASTDIR=`cat $HOME/.lf-last-dir-path`; cd "$LASTDIR";';
     {
-      echo "alias lf='$LF_ALIAS';"
+      echo "alias ranger='. ranger'"
       echo "alias cloudcmd='npx -y cloudcmd';"
-    }) >> ~/.bash_aliases &&
+    } >> ~/.bash_aliases &&
     echo "Done!"
 
   echo "Installing Ble.sh (https://github.com/akinomyoga/ble.sh)..." &&
