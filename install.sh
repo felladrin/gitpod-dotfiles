@@ -8,6 +8,7 @@ if [ -x "$(command -v brew)" ]; then
     zellij \
     ranger \
     procs \
+    dust \
     fzf
 fi
 
@@ -26,6 +27,7 @@ if [ -x "$(command -v bash)" ]; then
   echo "Adding bash aliases..." &&
     {
       echo "alias ranger='. ranger'"
+      echo "alias dust='dust -i'"
       echo "alias cloudcmd='npx -y cloudcmd';"
     } >> ~/.bash_aliases &&
     echo "Done!"
