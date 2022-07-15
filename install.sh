@@ -21,7 +21,7 @@ if [ -x "$(command -v bash)" ]; then
       echo 'export FZF_DEFAULT_COMMAND="rg --files"'
       echo "export SHELL=$(which bash)"
       echo 'eval "$(starship init bash)"'
-    } >> ~/.bashrc &&
+    } >>~/.bashrc &&
     echo "Done!"
 
   echo "Adding bash aliases..." &&
@@ -30,16 +30,10 @@ if [ -x "$(command -v bash)" ]; then
       echo "alias dust='dust -i'"
       echo "alias cloudcmd='npx -y cloudcmd'"
       echo "alias install-spacevim='curl -sLf https://spacevim.org/install.sh | bash'"
-    } >> ~/.bash_aliases &&
+    } >>~/.bash_aliases &&
     echo "Done!"
-
-  # shellcheck source=/dev/null
-  source ~/.bashrc
-
-  # shellcheck source=/dev/null
-  source ~/.bash_aliases
 fi
 
 endTime=$(date +%s)
 
-echo "Install finished in $((endTime-startTime)) seconds."
+echo "Install finished in $((endTime - startTime)) seconds."
