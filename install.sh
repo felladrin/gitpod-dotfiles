@@ -20,6 +20,7 @@ if [ -x "$(command -v bash)" ]; then
       echo 'HISTTIMEFORMAT="|%Y-%m-%d %T| "'
       echo 'export FZF_DEFAULT_COMMAND="rg --files"'
       echo "export SHELL=$(which bash)"
+      # shellcheck disable=SC2016
       echo 'eval "$(starship init bash)"'
     } >>~/.bashrc &&
     echo "Done!"
