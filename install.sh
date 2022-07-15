@@ -15,7 +15,7 @@ fi
 if [ -x "$(command -v bash)" ]; then
   echo "Configuring bash..." &&
     echo 'HISTTIMEFORMAT="|%Y-%m-%d %T| "' >> ~/.bashrc &&
-    echo 'FZF_DEFAULT_COMMAND="rg --files"' >> ~/.bashrc &&
+    echo 'export FZF_DEFAULT_COMMAND="rg --files"' >> ~/.bashrc &&
     echo "Done!"
 
   echo "Adding bash aliases..." &&
