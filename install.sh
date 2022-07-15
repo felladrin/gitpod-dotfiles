@@ -3,6 +3,7 @@ startTime=$(date +%s)
 
 if [ -x "$(command -v brew)" ]; then
   brew install \
+    git-extras \
     lazygit \
     ripgrep \
     zellij \
