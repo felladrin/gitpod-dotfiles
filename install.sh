@@ -4,6 +4,7 @@ startTime=$(date +%s)
 if [ -x "$(command -v brew)" ]; then
   brew install \
     git-extras \
+    starship \
     lazygit \
     ripgrep \
     zellij \
@@ -19,6 +20,7 @@ if [ -x "$(command -v bash)" ]; then
       echo 'HISTTIMEFORMAT="|%Y-%m-%d %T| "'
       echo 'export FZF_DEFAULT_COMMAND="rg --files"'
       echo "export SHELL=$(which bash)"
+      echo 'eval "$(starship init bash)"'
     } >> ~/.bashrc &&
     echo "Done!"
 
@@ -29,16 +31,6 @@ if [ -x "$(command -v bash)" ]; then
       echo "alias cloudcmd='npx -y cloudcmd'"
       echo "alias install-spacevim='curl -sLf https://spacevim.org/install.sh | bash'"
     } >> ~/.bash_aliases &&
-    echo "Done!"
-
-  echo "Installing Ble.sh (https://github.com/akinomyoga/ble.sh)..." &&
-    curl -L https://github.com/akinomyoga/ble.sh/releases/download/nightly/ble-nightly.tar.xz | tar xJf - &&
-    rm -rf blesh &&
-    mv ble-nightly* blesh &&
-    rm -rf ~/.local/share/blesh &&
-    mkdir -p ~/.local/share &&
-    mv blesh/ ~/.local/share &&
-    echo 'source ~/.local/share/blesh/ble.sh' >> ~/.bashrc &&
     echo "Done!"
 
   # shellcheck source=/dev/null
