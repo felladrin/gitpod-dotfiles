@@ -6,7 +6,6 @@ if [ -x "$(command -v brew)" ]; then
     git-extras \
     starship \
     lazygit \
-    ripgrep \
     zellij \
     ranger \
     procs \
