@@ -3,14 +3,7 @@ startTime=$(date +%s)
 
 if [ -x "$(command -v brew)" ]; then
   brew install \
-    git-extras \
-    starship \
-    lazygit \
-    zellij \
-    ranger \
-    procs \
-    dust \
-    fzf
+    starship
 fi
 
 if [ -x "$(command -v bash)" ]; then
@@ -26,8 +19,12 @@ if [ -x "$(command -v bash)" ]; then
 
   echo "Adding bash aliases..." &&
     {
-      echo "alias ranger='. ranger'"
-      echo "alias dust='dust -i'"
+      echo "alias ranger='(ranger --version &> /dev/null || brew install ranger &> /dev/null) && . ranger'"
+      echo "alias dust='(dust --version &> /dev/null || brew install dust &> /dev/null) && dust -i'"
+      echo "alias lazygit='(lazygit --version &> /dev/null || brew install lazygit &> /dev/null) && lazygit'"
+      echo "alias zellij='(zellij --version &> /dev/null || brew install zellij &> /dev/null) && zellij'"
+      echo "alias procs='(procs --version &> /dev/null || brew install procs &> /dev/null) && procs'"
+      echo "alias fzf='(fzf --version &> /dev/null || brew install fzf &> /dev/null) && fzf'"
       echo "alias cloudcmd='npx -y cloudcmd'"
       echo "alias install-spacevim='curl -sLf https://spacevim.org/install.sh | bash'"
     } >>~/.bash_aliases &&
