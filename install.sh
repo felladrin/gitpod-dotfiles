@@ -2,6 +2,8 @@
 startTime=$(date +%s)
 
 if [ -x "$(command -v brew)" ]; then
+  brew update
+
   brew install \
     starship
 fi
