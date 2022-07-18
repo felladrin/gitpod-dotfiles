@@ -26,7 +26,7 @@ if [ -x "$(command -v bash)" ]; then
       echo "alias procs='(procs --version &> /dev/null || brew install procs &> /dev/null) && procs'"
       echo "alias fzf='(fzf --version &> /dev/null || brew install fzf &> /dev/null) && fzf'"
       echo "alias cloudcmd='npx -y cloudcmd'"
-      echo "alias install-spacevim='curl -sLf https://spacevim.org/install.sh | bash'"
+      echo "alias install-lunarvim='brew install neovim && bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/master/utils/installer/install.sh) -y'"
     } >>~/.bash_aliases &&
     echo "Done!"
 fi
