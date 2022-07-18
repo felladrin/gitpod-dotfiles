@@ -6,6 +6,10 @@ if [ -x "$(command -v brew)" ]; then
     starship
 fi
 
+if [ -x "$(command -v pnpm)" ]; then
+  pnpm setup
+fi
+
 if [ -x "$(command -v bash)" ]; then
   echo "Configuring bash..." &&
     {
